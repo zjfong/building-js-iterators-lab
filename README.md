@@ -2,7 +2,7 @@
 
 ## Getting started
 
-1. Fork this repo, and clone it into your `dev` folder on your local machine.  Make sure you are in `dev` before cloning.
+1. Fork & clone this repo.
 2. Start at `myEach.js`. There is already some starter code there; begin by filling in the function body.
 3. Use the included test suite to help you test your solutions (See the section on Tests below).
 
@@ -25,9 +25,9 @@ Before you start each problem, ask yourself questions such as:
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
 
 #### Goal
-* Create a function `myEach` which implements `Array.prototype.forEach`
-* Create a function `myMap` which implements `Array.prototype.map`
-* Create a function `myReduce` which implements `Array.prototype.reduce`
+1. Create a function `myEach` which implements `Array.prototype.forEach`
+2. Create a function `myMap` which implements `Array.prototype.map`
+3. Create a function `myReduce` which implements `Array.prototype.reduce`
     - Note: `reduce` behaves a little bit different than the other iterators (see [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)). For `myReduce` we recommend you not worry about `initialValue` at first. You can always add it in later.
 
 > **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start small and add features later.
@@ -138,6 +138,8 @@ At line 37 in the test file there was an expectation that an array would have th
 You should not be calling your functions directly. For example, you should not call `myMap` inside `myMap.js`.
 
 If you want to test your code manually, we recommend you write all of your "driver code" inside of `index.js`.
+
+To run it on the console, type: `node index.js`
 
 Here's what your driver code might look like:
 
