@@ -20,11 +20,26 @@ describe('myMap', function() {
     testArr = ['a', 'b', 'c', 'd'];
   });
 
-  it("takes a function as the second argument and calls that function (callback)", function testCallback() {
+ it("accepts an array as the first argument", function testFirstArgument() {
+    expect(true).to.equal(true); // this is just a freebie
+  });
+
+  it("accepts a callback function as the second argument", function testSecondArgument() {
+    expect(true).to.equal(true); // this is just a freebie
+  });
+
+  it("calls the callback function", function testCallbackIsCalled() {
     function spyOnMe() {}
     var spy = chai.spy(spyOnMe);
     myMap(testArr, spy);
     expect(spy).to.have.been.called();
+  });
+
+  it("calls the callback function once for every item in the array", function testCallbackisCalledNTimes() {
+    function spyOnMe() {}
+    var spy = chai.spy(spyOnMe);
+    myMap(testArr, spy);
+    expect(spy).to.have.been.called.exactly(testArr.length);
   });
 
   it("passes each value in the array to the callback", function testEachItem(){
