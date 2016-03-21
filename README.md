@@ -1,8 +1,13 @@
 # Building iterators
+Let's build our own iterators: `myEach`, `myMap`, and `myReduce`.
 
-Let's build our own iterators!
+## Getting started
 
-## Implementation Tips
+1. **Fork & Clone** this repo.
+2. **Plan Ahead**: Research each iterator before you write any code.
+3. **Check Your Solution**: Write Driver Code, or run the included Tests (see below).
+
+#### Before You Start Coding
 
 For the following challenges it is essential that you understand the requirements to fully implement the built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -22,7 +27,6 @@ You should be able to answer most of these questions based on the documentation 
 1. Create a function `myEach` which implements `Array.prototype.forEach`
 2. Create a function `myMap` which implements `Array.prototype.map`
 3. Create a function `myReduce` which implements `Array.prototype.reduce`
-    - Note: `reduce` behaves a little bit different than the other iterators (see [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)). For `myReduce` we recommend you not worry about `initialValue` at first. You can always add it in later.
 
 > **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start small and add features later.
 
@@ -33,15 +37,8 @@ You should be able to answer most of these questions based on the documentation 
 * Create a function `myEvery` which implements `Array.prototype.every`
 
 
-## Getting started
-
-1. Fork & clone this repo.
-2. Start at `myEach.js`.
-    - There is already some starter code in there - make sure to write all your code inside the function.
-3. Use the included test suite to help you test your solutions (See the section on Tests below).
-
-# Checking your Solutions
-## Checking Your Code Using Driver Code
+# Check Your Solution
+## Checking Your Code: Using Driver Code
 
 You should not be calling your functions directly. For example, you should not call `myMap` inside `myMap.js`.
 
@@ -69,7 +66,7 @@ node index.js
 
 > **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing.
 
-## Checking Your Code Using Tests
+## Checking Your Code: Using Tests
 
 For each problem (`problems.forEach`!), you can run the provided tests to check your work and confirm your solution.
 

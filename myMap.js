@@ -1,3 +1,5 @@
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Map
+
 function myMap(arr, callback) {
 
 //  CODE INSIDE HERE   //
