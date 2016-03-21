@@ -1,12 +1,6 @@
 # Building iterators
 
-## Getting started
-
-1. Fork & clone this repo.
-2. Start at `myEach.js`. There is already some starter code there; begin by filling in the function body.
-3. Use the included test suite to help you test your solutions (See the section on Tests below).
-
-## Build your own iterator!
+Let's build our own iterators!
 
 #### Implementation Tips
 
@@ -39,7 +33,37 @@ You should be able to answer most of these questions based on the documentation 
 * Create a function `myEvery` which implements `Array.prototype.every`
 
 
-## Using Tests
+## Getting started
+
+1. Fork & clone this repo.
+2. Start at `myEach.js`.
+    - There is already some starter code in there - make sure to write all your code inside the function.
+3. Use the included test suite to help you test your solutions (See the section on Tests below).
+
+# Checking your Solutions
+## Checking Your Code Using Assertions
+
+You should not be calling your functions directly. For example, you should not call `myMap` inside `myMap.js`.
+
+If you want to test your code manually, we recommend you write all of your "driver code" inside of `index.js`.
+
+To run it on the console, type: `node index.js`
+
+Here's what your driver code might look like:
+
+``` javascript
+//index.js
+var input = ["a","b","c"];
+var output = myMap(input, function(v){
+    return v.toUpperCase();
+};
+console.log('Testing myMap')
+console.log(output === ["A", "B", "C"]) // assertion
+```
+
+> **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing.
+
+## Checking Your Code Using Tests
 
 For each problem (`problems.forEach`!), you can run the provided tests to check your work and confirm your solution.
 
@@ -132,25 +156,3 @@ Here's another one:
 
 At line 37 in the test file there was an expectation that an array would have the elements `['a', 'b', 'c', 'd']`.  But instead it got an empty array!
 
-
-### Another way to test/use your code
-
-You should not be calling your functions directly. For example, you should not call `myMap` inside `myMap.js`.
-
-If you want to test your code manually, we recommend you write all of your "driver code" inside of `index.js`.
-
-To run it on the console, type: `node index.js`
-
-Here's what your driver code might look like:
-
-``` javascript
-//index.js
-var input = ["a","b","c"];
-var output = myMap(input, function(v){
-    return v.toUpperCase();
-};
-console.log('Testing myMap')
-console.log(output === ["A", "B", "C"]) // assertion
-```
-
-> **Note**: All your iterator function are available to you in this file! That's what `require` is doing.
