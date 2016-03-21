@@ -59,7 +59,7 @@ console.log(output === ["A", "B", "C"]) // assertion
 To execute this code from the command-line, you need to type:
 
 ``` bash
-# inside builing_js_iterators_lab directory
+# make sure you are inside the builing_js_iterators_lab directory
 node index.js
 ```
 
@@ -70,16 +70,23 @@ node index.js
 
 For each problem (`problems.forEach`!), you can run the provided tests to check your work and confirm your solution.
 
-To setup the tests, please follow these instructions:
-* `cd` into the `building_js_interators_lab` directory.
-* Run `npm install`.  (You should *not* be in the `test` directory).
-    - This installs the dependencies and testing framework we need.
+#### Test Setup
+
+Make sure you are inside the `building_js_iterators_lab` directory.
+
+From the command-line, run:
+
+```bash
+# make sure you are inside the builing_js_iterators_lab directory
+npm install
+```
 
 ### Running the tests
 
 To run the tests for `myMap` from the command-line, type:
 
 ```bash
+# make sure you are inside the builing_js_iterators_lab directory
 mocha test/test-myMap.js
 ```
 
@@ -88,6 +95,7 @@ This will test the `myMap` function you wrote in `myMap.js`.
 You can do the same thing for the other iterators as well:
 
 ```bash
+# make sure you are inside the builing_js_iterators_lab directory
 mocha test/test-myEach.js
 mocha test/test-myReduce.js
 ```
@@ -128,6 +136,8 @@ $ mocha test/test-myMap.js
 
 > **Note**: Sometimes tests pass right away. This is called a "false positive". As you start writing code, some of your prematurely "green" tests will turn "red"!
 
+**Example - Failure Message 7**
+
 Here's an example of a failure messages (pay close attention to these, they give you hints!):
 
 ```
@@ -147,7 +157,7 @@ the statement turns out to be false, then the assertion fails and the test fails
 
 In the above output we can see that the assertion in `test/test-myMap.js:115:38` (at line 115, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
 
-Here's another one:
+**Example - Failure Message 2**
 
 ```
 2) myMap passes each item in the array to the callback:
