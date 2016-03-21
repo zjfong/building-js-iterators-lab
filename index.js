@@ -13,7 +13,7 @@ var numArray = [0,1,10,100,1000];
 /* myEach */
 
 //
-// myEach(numArray, function(element, index, arr) {
+// myEach(numArray, function print(element, index, arr) {
 //   console.log('inside myEach', element, index, arr);
 // });
 
@@ -23,9 +23,9 @@ var numArray = [0,1,10,100,1000];
 /* myMap */
 
 // var input = ["a","b","c"];
-// var output = myMap(input, function(v){
+// var output = myMap(input, function capitalize(v){
 //     return v.toUpperCase();
-// };
+// });
 // console.log('Testing myMap')
 // console.log(output === ["A", "B", "C"]) // assertion
 

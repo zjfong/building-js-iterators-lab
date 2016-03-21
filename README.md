@@ -47,7 +47,7 @@ Here's an example of what good driver code looks like:
 ``` javascript
 //index.js
 var input = ["a","b","c"];
-var output = myMap(input, function(v){
+var output = myMap(input, function capitalize(v){
     return v.toUpperCase();
 };
 console.log('Testing myMap')
