@@ -40,11 +40,9 @@ You should be able to answer most of these questions based on the documentation 
 # Check Your Solution
 ## Checking Your Code: Using Driver Code
 
-You should not be calling your functions directly. For example, you should not call `myMap` inside `myMap.js`.
+To check your code manually, we recommend you write "driver code" inside of `index.js` instead of from inside your iterator files (e.g. `myEach.js`, `myMap.js`, `myReduce.js`). This helps keep your "driver code" seperate from your "implementation code".
 
-If you want to test your code manually, we recommend you write all of your "driver code" inside of `index.js`.
-
-Here's what your driver code might look like:
+Here's an example of what good driver code looks like:
 
 ``` javascript
 //index.js
