@@ -57,7 +57,7 @@ console.log(output === ["A", "B", "C"]) // assertion
 To execute this code from the command-line, you need to type:
 
 ``` bash
-# make sure you are inside the builing_js_iterators_lab directory
+# make sure you are inside the building_js_iterators_lab directory
 node index.js
 ```
 
@@ -75,7 +75,7 @@ Make sure you are inside the `building_js_iterators_lab` directory.
 From the command-line, run:
 
 ```bash
-# make sure you are inside the builing_js_iterators_lab directory
+# make sure you are inside the building_js_iterators_lab directory
 npm install
 ```
 
@@ -84,7 +84,7 @@ npm install
 To run the tests for `myMap` from the command-line, type:
 
 ```bash
-# make sure you are inside the builing_js_iterators_lab directory
+# make sure you are inside the building_js_iterators_lab directory
 mocha test/test-myMap.js
 ```
 
@@ -93,7 +93,7 @@ This will test the `myMap` function you wrote in `myMap.js`.
 You can do the same thing for the other iterators as well:
 
 ```bash
-# make sure you are inside the builing_js_iterators_lab directory
+# make sure you are inside the building_js_iterators_lab directory
 mocha test/test-myEach.js
 mocha test/test-myReduce.js
 ```
