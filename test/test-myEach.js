@@ -21,11 +21,11 @@ describe('myEach', function() {
   });
 
   it("accepts an array as the first argument", function testFirstArgument() {
-    expect(true).to.equal(true); // this is just a freebie
+    expect(myEach).to.have.length.within(1,2) // number of arguments
   });
 
   it("accepts a callback function as the second argument", function testSecondArgument() {
-    expect(true).to.equal(true); // this is just a freebie
+    expect(myEach).to.have.length(2)  // number of arguments
   });
 
   it("calls the callback function", function testCallbackIsCalled() {

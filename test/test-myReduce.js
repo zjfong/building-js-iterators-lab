@@ -21,26 +21,26 @@ describe('myReduce', function() {
   });
 
   it("accepts an array as the first argument", function testFirstArgument() {
-     expect(true).to.equal(true); // this is just a freebie
-   });
+    expect(myReduce).to.have.length.within(1,3) // number of arguments
+  });
 
-   it("accepts a callback function as the second argument", function testSecondArgument() {
-     expect(true).to.equal(true); // this is just a freebie
-   });
+  it("accepts a callback function as the second argument", function testSecondArgument() {
+    expect(myReduce).to.have.length.within(2,3)  // number of arguments
+  });
 
-   it("calls the callback function", function testCallbackIsCalled() {
-     function spyOnMe() {}
-     var spy = chai.spy(spyOnMe);
-     myReduce(testArr, spy);
-     expect(spy).to.have.been.called();
-   });
+  it("calls the callback function", function testCallbackIsCalled() {
+   function spyOnMe() {}
+   var spy = chai.spy(spyOnMe);
+   myReduce(testArr, spy);
+   expect(spy).to.have.been.called();
+  });
 
-   it("calls the callback function once for every pair of items in the array", function testCallbackisCalledNTimes() {
-     function spyOnMe() {}
-     var spy = chai.spy(spyOnMe);
-     myReduce(testArr, spy);
-     expect(spy).to.have.been.called.exactly(testArr.length - 1);
-   });
+  it("calls the callback function once for every pair of items in the array", function testCallbackisCalledNTimes() {
+   function spyOnMe() {}
+   var spy = chai.spy(spyOnMe);
+   myReduce(testArr, spy);
+   expect(spy).to.have.been.called.exactly(testArr.length - 1);
+  });
 
   it("has a return value that is equal to the final return value of the callback", function() {
     var results = myReduce(testArr, function(){
@@ -109,7 +109,6 @@ describe('myReduce', function() {
     });
   });
 
-
   describe("when NO initialValue is provided", function() {
 
     it("uses the first value in the array (as the 1st callback argument)", function() {
@@ -167,6 +166,11 @@ describe('myReduce', function() {
   });
 
   describe("when an initialValue IS provided", function() {
+
+      it("accepts an optional initialValue as the 3rd argument", function testSecondArgument() {
+        expect(myReduce).to.have.length(3)  // number of arguments
+      });
+
       it("the first time the callback is called, it uses the initialValue (as the 1st callback argument)", function() {
         var result = [];
 
