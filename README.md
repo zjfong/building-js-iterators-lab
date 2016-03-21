@@ -2,7 +2,7 @@
 
 Let's build our own iterators!
 
-#### Implementation Tips
+## Implementation Tips
 
 For the following challenges it is essential that you understand the requirements to fully implement the built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -18,7 +18,7 @@ Before you start each problem, ask yourself questions such as:
 
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
 
-#### Goal
+## Challenges
 1. Create a function `myEach` which implements `Array.prototype.forEach`
 2. Create a function `myMap` which implements `Array.prototype.map`
 3. Create a function `myReduce` which implements `Array.prototype.reduce`
@@ -41,13 +41,11 @@ You should be able to answer most of these questions based on the documentation 
 3. Use the included test suite to help you test your solutions (See the section on Tests below).
 
 # Checking your Solutions
-## Checking Your Code Using Assertions
+## Checking Your Code Using Driver Code
 
 You should not be calling your functions directly. For example, you should not call `myMap` inside `myMap.js`.
 
 If you want to test your code manually, we recommend you write all of your "driver code" inside of `index.js`.
-
-To run it on the console, type: `node index.js`
 
 Here's what your driver code might look like:
 
@@ -60,6 +58,14 @@ var output = myMap(input, function(v){
 console.log('Testing myMap')
 console.log(output === ["A", "B", "C"]) // assertion
 ```
+
+To execute this code from the command-line, you need to type:
+
+``` bash
+# inside builing_js_iterators_lab directory
+node index.js
+```
+
 
 > **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing.
 
@@ -74,7 +80,7 @@ To setup the tests, please follow these instructions:
 
 ### Running the tests
 
-To run the tests for `myMap`, in your terminal, type:
+To run the tests for `myMap` from the command-line, type:
 
 ```bash
 mocha test/test-myMap.js
@@ -93,8 +99,8 @@ mocha test/test-myReduce.js
 
 #### Sample output:
 
-GREEN (✓) - test has passed. Nice work!
-RED - test has failed. Keep working!
+<strong style="color:green;">GREEN</strong> (✓) - test has passed. Nice work!
+<strong style="color:red;">RED</strong> - test has failed. Keep working!
 
 For example, here is some test output with three passing (✓) tests:
 
