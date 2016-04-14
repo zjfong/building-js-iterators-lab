@@ -49,9 +49,9 @@ Here's an example of what good driver code looks like:
 var input = ["a","b","c"];
 var output = myMap(input, function capitalize(v){
     return v.toUpperCase();
-};
+});
 console.log('Testing myMap')
-console.log(output === ["A", "B", "C"]) // assertion
+console.log("Expected:", ["A", "B", "C"], "Got:", output)
 ```
 
 To execute this code from the command-line, you need to type:
