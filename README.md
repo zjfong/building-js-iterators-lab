@@ -9,7 +9,7 @@ Let's build our own iterators: `myEach`, `myMap`, and `myReduce`.
 
 #### Before You Start Coding
 
-For the following challenges it is essential that you understand the requirements to fully implement the built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+For each of the following challenges, it is essential that you understand the requirements to fully implement the built-in array method you're emulating. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 Before you start each problem, ask yourself questions such as:
 
@@ -17,8 +17,8 @@ Before you start each problem, ask yourself questions such as:
 * What is our output?
 * What happens on each loop?
 * What does the callback function do?
-* What gets passed into our callback function? i.e. what arguments does it receive? (it's inputs)
-  * Where does it come from?
+* What gets passed into our callback function? i.e. what arguments does it receive? (its inputs)
+  * Where does the callback come from?
   * How do we know what to name it?
 
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
@@ -26,45 +26,22 @@ You should be able to answer most of these questions based on the documentation 
 ## Challenges
 1. Create a function `myEach` which implements `Array.prototype.forEach`
 2. Create a function `myMap` which implements `Array.prototype.map`
-3. Create a function `myReduce` which implements `Array.prototype.reduce`
+3. Create a function `myFilter` which implements `Array.prototype.filter`
+
 
 > **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start small and add features later.
 
 **Bonuses**:
 
-* Create a function `myFilter` which implements `Array.prototype.filter`
+* Create a function `myReduce` which implements `Array.prototype.reduce`
 * Create a function `mySome` which implements `Array.prototype.some`
 * Create a function `myEvery` which implements `Array.prototype.every`
+* Create a function `myFind` which implements `Array.prototype.find` (`find` is a new JavaScript function!)
 
 
 # Check Your Solution
-## Checking Your Code: Using Driver Code
 
-To check your code manually, we recommend you write "driver code" inside of `index.js` instead of from inside your iterator files (e.g. `myEach.js`, `myMap.js`, `myReduce.js`). This helps keep your "driver code" seperate from your "implementation code".
-
-Here's an example of what good driver code looks like:
-
-``` javascript
-//index.js
-var input = ["a","b","c"];
-var output = myMap(input, function capitalize(v){
-    return v.toUpperCase();
-});
-console.log('Testing myMap')
-console.log("Expected:", ["A", "B", "C"], "Got:", output)
-```
-
-To execute this code from the command-line, you need to type:
-
-``` bash
-# make sure you are inside the building_js_iterators_lab directory
-node index.js
-```
-
-
-> **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing.
-
-## Checking Your Code: Using Tests
+## Checking Your Code Using Tests
 
 For each problem (`problems.forEach`!), you can run the provided tests to check your work and confirm your solution.
 
@@ -167,3 +144,28 @@ In the above output we can see that the assertion in `test/test-myMap.js:115:38`
 
 At line 37 in the test file there was an expectation that an array would have the elements `['a', 'b', 'c', 'd']`.  But instead it got an empty array!
 
+## Checking Your Code By Hand
+
+To check your code manually, we recommend you write simple test code inside of `index.js` instead of from inside your iterator files (e.g. `myEach.js`, `myMap.js`, `myReduce.js`). This helps keep your test code seperate from your "implementation code".
+
+Here's an example of what good manual test code looks like:
+
+``` javascript
+//index.js
+var input = ["a","b","c"];
+var output = myMap(input, function capitalize(v){
+    return v.toUpperCase();
+});
+console.log('Testing myMap')
+console.log("Expected:", ["A", "B", "C"], "Got:", output)
+```
+
+To execute this code from the command-line, you need to type:
+
+``` bash
+# make sure you are inside the building_js_iterators_lab directory
+node index.js
+```
+
+
+> **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing.
