@@ -63,7 +63,7 @@ console.log("Expected:", ["A", "B", "C"], "Got:", output)
 To execute this code from the command-line, you need to type:
 
 ``` bash
-# make sure you are inside the building_js_iterators_lab directory
+# make sure you are inside the building-js-iterators-lab directory
 node index.js
 ```
 
@@ -76,13 +76,14 @@ For each problem (`problems.forEach`!), you can run the provided tests to check 
 
 #### Test Setup
 
-Make sure you are inside the `building_js_iterators_lab` directory.
+Make sure you are inside the `building-js-iterators-lab` directory.
 
 From the command-line, run:
 
 ```bash
-# make sure you are inside the building_js_iterators_lab directory
+# make sure you are inside the building-js-iterators-lab directory
 npm install
+npm install -g mocha
 ```
 
 ### Running the tests
@@ -90,8 +91,8 @@ npm install
 To run the tests for `myMap` from the command-line, type:
 
 ```bash
-# make sure you are inside the building_js_iterators_lab directory
-mocha test/test-myMap.js
+# make sure you are inside the building-js-iterators-lab directory
+mocha spec/myMapSpec.js
 ```
 
 This will test the `myMap` function you wrote in `myMap.js`.
@@ -99,9 +100,9 @@ This will test the `myMap` function you wrote in `myMap.js`.
 You can do the same thing for the other iterators as well:
 
 ```bash
-# make sure you are inside the building_js_iterators_lab directory
-mocha test/test-myEach.js
-mocha test/test-myReduce.js
+# make sure you are inside the building-js-iterators-lab directory
+mocha spec/myEachSpec.js
+mocha spec/myReduceSpec.js
 ```
 
 > **Pro-Tip**: Let the tests call your function for you. You should not be calling, e.g. `myMap` in your code directly.
@@ -114,7 +115,7 @@ mocha test/test-myReduce.js
 For example, here is some test output with three passing (✓) tests:
 
 ```
-$ mocha test/test-myMap.js
+$ mocha spec/myMapSpec.js
 
 
  myMap
@@ -153,20 +154,20 @@ Here's an example of a failure messages (pay close attention to these, they give
   +1
   -0
 
-  at Context.testArrayL1 (test/test-myMap.js:115:38)
+  at Context.testArrayL1 (spec/myMapSpec.js:115:38)
 ```
 
 An **assertion** is a statement that *asserts* or says this "MUST BE TRUE".  If
 the statement turns out to be false, then the assertion fails and the test fails.  
 
-In the above output we can see that the assertion in `test/test-myMap.js:115:38` (at line 115, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
+In the above output we can see that the assertion in `spec/myMapSpec.js:115:38` (at line 115, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
 
 **Example - Failure Message 2**
 
 ```
 2) myMap passes each item in the array to the callback:
    AssertionError: expected [] to have the same members as [ 'a', 'b', 'c', 'd' ]
-    at Context.testEachItem (test/test-myMap.js:37:36)
+    at Context.testEachItem (spec/myMapSpec.js:37:36)
 ```
 
 *What do you think this means?*
