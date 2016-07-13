@@ -20,14 +20,29 @@ describe('myReduce', function() {
     testArr = ['a', 'b', 'c', 'd'];
   });
 
-  it("takes a function as the second argument and calls that function (callback)", function testCallback() {
-    function spyOnMe() {}
-    var spy = chai.spy(spyOnMe);
-    myReduce(testArr, spy);
-    expect(spy).to.have.been.called();
+  it("accepts an array as the first argument", function testFirstArgument() {
+    expect(myReduce).to.have.length.within(1,3) // number of arguments
   });
 
-  it("has a return value that is equal to the last return value of the callback", function() {
+  it("accepts a callback function as the second argument", function testSecondArgument() {
+    expect(myReduce).to.have.length.within(2,3)  // number of arguments
+  });
+
+  it("calls the callback function", function testCallbackIsCalled() {
+   function spyOnMe() {}
+   var spy = chai.spy(spyOnMe);
+   myReduce(testArr, spy);
+   expect(spy).to.have.been.called();
+  });
+
+  it("calls the callback function once for every pair of items in the array", function testCallbackisCalledNTimes() {
+   function spyOnMe() {}
+   var spy = chai.spy(spyOnMe);
+   myReduce(testArr, spy);
+   expect(spy).to.have.been.called.exactly(testArr.length - 1);
+  });
+
+  it("has a return value that is equal to the final return value of the callback", function() {
     var results = myReduce(testArr, function(){
       return 1000100;  // on every pass
     });
@@ -46,8 +61,8 @@ describe('myReduce', function() {
   });
 
 
-  it("passes the last result of the callback as the first argument to the " +
-    "callback on each successive pass", function() {
+  it("uses the return value of the previous execution of the callback " +
+    "in the next execution of the callback (as the 1st callback argument)", function() {
     var results = [];
 
     myReduce(testArr, function(previousValue) {
@@ -60,8 +75,31 @@ describe('myReduce', function() {
     expect(results).to.have.members(['blue', 'blue', 'blue']);
   });
 
+  it("uses the value at the current index (as the 2nd callback argument)", function() {
+    var results = [];
 
-  it("passes the entire array to the callback as argument 4", function testArrayPassing() {
+    myReduce(testArr, function(previousValue, currentValue) {
+      results.push(currentValue);
+    });
+    console.log('       results: ', results);
+    expect(results).to.have.members(testArr.slice(1));
+  });
+
+  it("uses the current index (as the 3rd callback argument)", function() {
+    var results = [];
+
+    myReduce(testArr, function(previousValue, currentValue, index) {
+      results.push(index);
+    });
+    console.log('       results: ', results);
+    expect(results).to.have.members(
+      // indexes 1..testArr.length
+      Array.apply(null, Array(testArr.length)).map(function (_, i) {return i;}).slice(1)
+    );
+  });
+
+
+  it("uses the entire array (as the 4th callback argument)", function testArrayPassing() {
     var resultingArray = [];
     myReduce(testArr, function(_prev, _curr, index, arr) {
       console.log('       results: ', arr);
@@ -71,10 +109,9 @@ describe('myReduce', function() {
     });
   });
 
-
   describe("when NO initialValue is provided", function() {
 
-    it("it uses element 0 as the starting point (1st arg)", function() {
+    it("uses the first value in the array (as the 1st callback argument)", function() {
       var stachedValues = [];
       myReduce(['a', 0, 0, 0], function(prev, _curr) {
         stachedValues.push(prev);
@@ -84,7 +121,7 @@ describe('myReduce', function() {
       expect(stachedValues[0]).to.equal('a');
     });
 
-    it("it uses element 1 as the first currentValue (2nd argument)", function() {
+    it("uses the second value in the array (as the 2nd callback argument)", function() {
       var stachedValues = [];
       myReduce([0, 'b', 0], function(_prev, curr) {
         stachedValues.push(curr);
@@ -94,7 +131,8 @@ describe('myReduce', function() {
       expect(stachedValues[0]).to.equal('b');
     });
 
-    it("passes each element as the second argument to the callback", function testEachElem() {
+    it("eventually passes every value in the array to the callback " +
+      "(as the 3rd callback argument)", function testEachElem() {
       var resultingArray = [];
       myReduce(testArr, function(_prev, curr) {
         resultingArray.push(curr);
@@ -105,7 +143,8 @@ describe('myReduce', function() {
       expect(resultingArray).to.have.members(['b', 'c', 'd']);
     });
 
-    it("passes each index in the array to the callback as the 3rd arg", function testEachIndex() {
+    it("eventually passes every index in the array to the callback " +
+      "(as the 3rd callback argument)", function testEachIndex() {
       var resultingArray = [];
       myReduce(testArr, function(_prev, _curr, index) {
         resultingArray.push(index);
@@ -116,7 +155,7 @@ describe('myReduce', function() {
       expect(resultingArray).to.have.members([1, 2, 3]);
     });
 
-    it("the first index is 1", function() {
+    it("the first time the callback is called, the index starts at 1", function() {
       var results = [];
       myReduce(testArr, function(_prev, _next, index) {
         results.push(index);
@@ -127,7 +166,12 @@ describe('myReduce', function() {
   });
 
   describe("when an initialValue IS provided", function() {
-      it("passes the initialValue in as the first argument to the callback on the first pass", function() {
+
+      it("accepts an optional initialValue as the 3rd argument", function testSecondArgument() {
+        expect(myReduce).to.have.length(3)  // number of arguments
+      });
+
+      it("the first time the callback is called, it uses the initialValue (as the 1st callback argument)", function() {
         var result = [];
 
         myReduce(testArr, function(previousValue) {
@@ -136,7 +180,7 @@ describe('myReduce', function() {
         expect(result[0]).to.equal(192);
       });
 
-      it("the first index is 0", function() {
+      it("the first time the callback is called, the index starts at 0", function() {
         var results = [];
         myReduce(testArr, function(_prev, _next, index) {
           results.push(index);
@@ -144,7 +188,7 @@ describe('myReduce', function() {
         expect(results[0]).to.equal(0);
       });
 
-      it("works with arrays of length 0", function testArrayL0() {
+      it("works even when the array is empty", function testArrayL0() {
         var resultingArray = [];
         var result = myReduce([], function(item) {
           return '44';
