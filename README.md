@@ -87,7 +87,7 @@ To run the tests for `myMap` from the command-line, type:
 
 ```bash
 # make sure you are inside the building-js-iterators-lab directory
-mocha spec/myMapSpec.js
+mocha test/myMapSpec.js
 ```
 
 This will test the `myMap` function you wrote in `myMap.js`.
@@ -96,8 +96,8 @@ You can do the same thing for the other iterators as well:
 
 ```bash
 # make sure you are inside the building-js-iterators-lab directory
-mocha spec/myEachSpec.js
-mocha spec/myReduceSpec.js
+mocha test/myEachSpec.js
+mocha test/myReduceSpec.js
 ```
 
 > **Pro-Tip**: Let the tests call your function for you. You should not be calling, e.g. `myMap` in your code directly.
@@ -110,7 +110,7 @@ mocha spec/myReduceSpec.js
 For example, here is some test output with three passing (✓) tests:
 
 ```
-$ mocha spec/myMapSpec.js
+$ mocha test/myMapSpec.js
 
 
  myMap
@@ -149,20 +149,20 @@ Here's an example of a failure messages (pay close attention to these, they give
   +1
   -0
 
-  at Context.testArrayL1 (spec/myMapSpec.js:115:38)
+  at Context.testArrayL1 (test/myMapSpec.js:115:38)
 ```
 
 An **assertion** is a statement that *asserts* or says this "MUST BE TRUE".  If
 the statement turns out to be false, then the assertion fails and the test fails.  
 
-In the above output we can see that the assertion in `spec/myMapSpec.js:115:38` (at line 115, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
+In the above output we can see that the assertion in `test/myMapSpec.js:115:38` (at line 115, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
 
 **Example - Failure Message 2**
 
 ```
 2) myMap passes each item in the array to the callback:
    AssertionError: expected [] to have the same members as [ 'a', 'b', 'c', 'd' ]
-    at Context.testEachItem (spec/myMapSpec.js:37:36)
+    at Context.testEachItem (test/myMapSpec.js:37:36)
 ```
 
 *What do you think this means?*
