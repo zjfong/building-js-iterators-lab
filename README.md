@@ -30,18 +30,13 @@ Before you start each problem, ask yourself questions such as:
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
 
 ## Challenges
-1. Create a function `myEach` which implements `Array.prototype.forEach`
-2. Create a function `myMap` which implements `Array.prototype.map`
-3. Create a function `myReduce` which implements `Array.prototype.reduce`
+1. Create a function `myFind` which implements `Array.prototype.find`
+2. Create a function `myEach` which implements `Array.prototype.forEach`
+3. Create a function `myMap` which implements `Array.prototype.map`
+4. Create a function `myFilter` which implements `Array.prototype.filter`
+5. Create a function `myReduce` which implements `Array.prototype.reduce`
 
 > **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start small and add features later.
-
-**Bonuses**:
-
-* Create a function `myFilter` which implements `Array.prototype.filter`
-* Create a function `mySome` which implements `Array.prototype.some`
-* Create a function `myEvery` which implements `Array.prototype.every`
-
 
 # Check Your Solution
 ## Checking Your Code: Using Driver Code
