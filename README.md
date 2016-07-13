@@ -15,7 +15,7 @@ Let's build our own iterators: `myEach`, `myMap`, and `myReduce`.
 
 #### Before You Start Coding
 
-For the following challenges it is essential that you understand the requirements to fully implement the built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+For the following exercises it is essential that you understand the requirements to fully implement the built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 Before you start each problem, ask yourself questions such as:
 
@@ -29,7 +29,7 @@ Before you start each problem, ask yourself questions such as:
 
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
 
-## Challenges
+## Exercises
 1. Create a function `myFind` which implements `Array.prototype.find`
 2. Create a function `myEach` which implements `Array.prototype.forEach`
 3. Create a function `myMap` which implements `Array.prototype.map`

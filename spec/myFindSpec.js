@@ -12,7 +12,7 @@ var expect = chai.expect;
 chai.config.includeStack = false; // turn off stack trace
 chai.config.showDiff = true; // turn on reporter diff display
 
-var myFind = require('../myFind');
+var myFind = require('../exercises/myFind');
 
 describe('myFind', function() {
   // sample data

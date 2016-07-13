@@ -12,7 +12,7 @@ var expect = chai.expect;
 chai.config.includeStack = false; // turn off stack trace
 chai.config.showDiff = true; // turn on reporter diff display
 
-var myReduce = require('../myReduce');
+var myReduce = require('../exercises/myReduce');
 
 describe('myReduce', function() {
   // sample data

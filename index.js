@@ -1,10 +1,15 @@
-var myEach = require('./myEach');
-var myMap = require('./myMap');
-var myReduce = require('./myReduce');
+var myEach = require('./exercises/myEach');
+var myMap = require('./exercises/myMap');
+var myReduce = require('./exercises/myReduce');
 /* *********************************************************************
-  You can edit this file
-  It will make use of your code in myEach.js, myMap.js and myReduce.js
-  To run it on the console do: `node index.js`
+  You can edit this file.  It will make use of your code in:
+
+  exercises/
+      myEach.js
+      myMap.js
+      myReduce.js
+
+  To execute it from the command line, run: `node index.js`
 ***********************************************************************/
 
 var numArray = [0,1,10,100,1000];

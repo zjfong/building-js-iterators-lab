@@ -12,7 +12,7 @@ var expect = chai.expect;
 chai.config.includeStack = false; // turn off stack trace
 chai.config.showDiff = true; // turn on reporter diff display
 
-var myMap = require('../myMap');
+var myMap = require('../exercises/myMap');
 
 describe('myMap', function() {
   // sample data
