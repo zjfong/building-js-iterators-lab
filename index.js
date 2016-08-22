@@ -1,10 +1,10 @@
-var myEach = require('./exercises/myEach');
-var myMap = require('./exercises/myMap');
-var myReduce = require('./exercises/myReduce');
+var myEach = require('./starter-code/myEach');
+var myMap = require('./starter-code/myMap');
+var myReduce = require('./starter-code/myReduce');
 /* *********************************************************************
-  You can edit this file.  It will make use of your code in:
+  You can edit this file.  It is set up to have use of your code in:
 
-  exercises/
+  starter-code/
       myEach.js
       myMap.js
       myReduce.js
@@ -34,5 +34,6 @@ var output = myMap(input, function capitalize(v){
 console.log('Testing myMap');
 console.log(output);
 console.log(output[0] === "A" && output[1] === "B" && output[2] === "C"); // assertion
+*/
 
-console.log("the end");*/
+console.log("the end of index.js");
