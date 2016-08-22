@@ -12,6 +12,7 @@ Let's build our own iterators: `myEach`, `myMap`, and `myReduce`.
 1. **Fork & Clone** this repo.
 2. **Plan Ahead**: Research each iterator before you write any code.
 3. **Check Your Solution**: Write Test Driver Code, or run the included Tests (see below).
+4. **Make a Commit** for every task you complete.
 
 #### Before You Start Coding
 
@@ -326,9 +327,7 @@ This is a little unclear, but at least it tells us exactly what part of the file
 
 <details><summary>click for explanation</summary>At line 37 in the test file there was an expectation that an array would have the elements `['a', 'b', 'c', 'd']`.  But instead it got an empty array!</details>
 
-### Deliverables
-
 
 ### Deliverables
 
-When you wrap up work, edit this README to include your name, a link to the original repository, and a 3-5 sentence reflection on completing this assignment **at the top of the readme**. Push your updates to GitHub and add a link to the repo to the "My Work" section of your website!
+When you're finished for the day, edit this README to include your name, a link to the original repository, and a 3-5 sentence reflection on completing this assignment **at the top of the readme**. Push your updates to GitHub and add a link to the repo to the "My Work" section of your website!
