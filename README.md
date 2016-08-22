@@ -28,12 +28,168 @@ Before you start each task, ask yourself questions such as:
 
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
 
-## Training Tasks
-1. Create a function `myFind` which implements `Array.prototype.find`
-2. Create a function `myEach` which implements `Array.prototype.forEach`
-3. Create a function `myMap` which implements `Array.prototype.map`
-4. Create a function `myFilter` which implements `Array.prototype.filter`
-5. Create a function `myReduce` which implements `Array.prototype.reduce`
+### Strategy
+
+* Write out pseudo-code before syntactically correct code.
+* Write down inputs that you'll use to test the function, and write what the output should be (you can use the examples).
+* Still on the paper or whiteboard, walk through what your function will do when called on the test input.  
+* Only when you have pseudo-code, test input, and expected output should you write syntactically correct code to implement the body of the function.  
+* Once you're confident in your syntax, test again.
+
+
+### Training Tasks
+
+1. Create a function `myFind` which implements `Array.prototype.find`. `myFind` takes in an array and a callback function. `myEach` should iterate through all elements in the array and call the callback function with these parameters: the current element, the current index, and the array itself. If the callback returns `true` for an element, `myFind` should immediately return the value of the element. If the callback never returns true for an element, `myFind` should return `undefined`. See [`find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). Work in `starter-code/myFind.js`
+
+  ```js
+  function myFind (array, callback) {
+    // your code here!
+    // myFind should duplicate the behavior of find
+  }
+  ```
+
+  <details><summary>click for example...</summary>
+  Example Inputs:
+  ```js
+  var words = ['air', 'tree', 'sunshine', 'trail', 'fire'];
+  function isLong(element, index, arr){
+      return element.length > 4;
+  }
+  ```
+
+  Example Use:
+  ```js
+  myFind(words, isLong);
+  // returns "sunshine"
+
+  // note, this should be the same as calling
+  words.find(isLong);
+  ```
+  </details>
+
+
+
+2. Create a function `myEach` which implements `Array.prototype.forEach`. `myEach` should take in an array and a callback function. `myEach` should iterate through all elements in the array and call the callback function with these parameters: the current element, the current index, and the array itself. `myEach` should return `undefined`. See [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach). Work in the `starter-code/myEach.js` file.
+
+  ```js
+  function myEach (array, callback) {
+    // your code here!
+    // myEach should duplicate the behavior of forEach
+  }
+  ```
+
+  <details><summary>click for example...</summary>
+  Example Inputs:
+  ```js
+  var words = ['apple', 'banana', 'cherry'];
+  var logAsList = function(element, index, arr){
+    console.log(index + '. ' + element);
+  }
+  ```
+
+  Example Use:
+  ```js
+  myEach(words, logAsList);
+  // console.logs:
+    // 1. apple
+    // 2. banana
+    // 3. cherry
+
+  // note, this should be the same as calling
+  words.forEach(logAsList);
+  ```
+  </details>
+
+
+3. Create a function `myMap` which implements `Array.prototype.map`.  `myMap` takes in an array and a callback function. `myMap` should iterate through all elements in the array and call the callback function with these parameters: the current element, the current index, and the array itself. `myMap` should return a new array containing the results of the callback calls. See [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). Work in `starter-code/myMap.js`.
+
+  ```js
+  function myMap (array, callback) {
+    // your code here!
+    // myMap should duplicate the behavior of map
+  }
+  ```
+
+  <details><summary>click for example...</summary>
+  Example Inputs:
+  ```js
+  var numbers = [1, 4, 9];
+  var timesTwo = function(element, index, arr){
+    return element*2;
+  }
+  ```
+
+  Example Use:
+  ```js
+  var result = myMap(numbers, timesTwo);
+  // result is [2, 8, 18]; numbers is still [1, 4, 9]
+
+  // note, this should be the same as saying:
+  result = numbers.map(timesTwo);
+  ```
+  </details>
+
+
+
+4. Create a function `myFilter` which implements `Array.prototype.filter`. `myFilter` takes in an array and a callback function. The callback function will have the following parameters: the current element, the current index, and the array itself. The callback function will return `true` or `false`. `myFilter` should return a new array containing all the elements for which the callback function returned `true`. See [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). Work in `starter-code/myFilter.js`.
+
+    ```js
+  function myFilter (array, callback) {
+    // your code here!
+    // myFilter should duplicate the behavior of filter
+  }
+  ```
+
+  <details><summary>click for example...</summary>
+  Example Inputs:
+  ```js
+  var numbers = [1, 4, 9, 16];
+  var isEven = function(element, index, arr){
+    return element % 2 === 0;
+  }
+  ```
+
+  Example Use:
+  ```js
+  var result = myFilter(numbers, isEven);
+  // newArr is [4, 16]; numbers is still [1, 4, 9, 16]
+
+  // note, this should be the same as saying:
+  result = numbers.filter(isEven);
+  ```
+  </details>
+
+
+
+5. Create a function `myReduce` which implements `Array.prototype.reduce`. `myReduce` takes in an array and a callback function, and it can optionally take a starting value. It should iterate through all elements in the array and call the callback function with these parameters: the previous value (or starting value if no previous yet), the current element, the current index, and the array itself. `myReduce` should return a single value built up from the previous values. See [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce). Work in `starter-code/myReduce.js`.
+
+  ```js
+  function myReduce(array, callback) {
+    // your code here!
+    // myReduce should duplicate the behavior of reduce
+  }
+  ```
+
+  <details><summary>click for example...</summary>
+  Example Inputs:
+  ```js
+  var numbers = [1, 4, 9];
+  var addUp = function(previous, element, index, arr){
+    return previous + element;
+  }
+  ```
+
+  Example Use:
+  ```js
+  var result = myReduce(numbers, addUp);
+  // result is 14
+
+  // note, this should be the same as saying:
+  result = numbers.reduce(addUp);
+  ```
+  </details>
+
+
 
 > **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start as simple as possible and add features as you go.
 
