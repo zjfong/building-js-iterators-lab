@@ -2,7 +2,27 @@
 function myFilter(arr, callback) {
 
 //  CODE INSIDE HERE   //
+var list = [];
+for(i=0; i<arr.length; i++){
 
+  // callback(arr[i], i, arr);
+  // if(return === true){
+  //   list.push(return)
+  // }
+
+  var result = callback(arr[i], i, arr);
+  if(result === true){
+    list.push(arr[i]);
+  }
+
+
+
+
+
+  }
+  return list;
+  // console.log(result);
+  // console.log(list);
 }
 
 
