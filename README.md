@@ -33,7 +33,7 @@ You should be able to answer most of these questions based on the documentation 
 
 * Write out pseudo-code before syntactically correct code.
 * Write down inputs that you'll use to test the function, and write what the output should be (you can use the examples).
-* Still on the paper or whiteboard, walk through what your function will do when called on the test input.  
+* Still on paper, on a whiteboard, or in comments, walk through what your function will do when called on the test input.  
 * Only when you have pseudo-code, test input, and expected output should you write syntactically correct code to implement the body of the function.  
 * Once you're confident in your syntax, test again.
 
