@@ -1,5 +1,5 @@
 <!--
- market: SF
+ location: SF
 -->
 
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
@@ -11,39 +11,38 @@ Let's build our own iterators: `myEach`, `myMap`, and `myReduce`.
 
 1. **Fork & Clone** this repo.
 2. **Plan Ahead**: Research each iterator before you write any code.
-3. **Check Your Solution**: Write Driver Code, or run the included Tests (see below).
+3. **Check Your Solution**: Write Test Driver Code, or run the included Tests (see below).
 
 #### Before You Start Coding
 
-For the following exercises it is essential that you understand the requirements to fully implement the built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+For the following tasks, it is essential that you understand the specific built-in array method. See [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
-Before you start each problem, ask yourself questions such as:
+Before you start each task, ask yourself questions such as:
 
 * What are our inputs?
 * What is our output?
-* What happens on each loop?
+* What happens on each iteration?
 * What does the callback function do?
-* What gets passed into our callback function? i.e. what arguments does it receive? (it's inputs)
-  * Where does it come from?
-  * How do we know what to name it?
+* What gets passed into our callback function? That is, what are its inputs/parameters?
+* Where does the callback function come from?
 
 You should be able to answer most of these questions based on the documentation you just read or by experimenting in the browser developer tools.
 
-## Exercises
+## Training Tasks
 1. Create a function `myFind` which implements `Array.prototype.find`
 2. Create a function `myEach` which implements `Array.prototype.forEach`
 3. Create a function `myMap` which implements `Array.prototype.map`
 4. Create a function `myFilter` which implements `Array.prototype.filter`
 5. Create a function `myReduce` which implements `Array.prototype.reduce`
 
-> **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start small and add features later.
+> **Pro-Tip**: It's easier to build incrementally than to try to do everything all at once. Remember to start as simple as possible and add features as you go.
 
-# Check Your Solution
-## Checking Your Code: Using Driver Code
+### Check Your Solution
+#### Checking Your Code: Using Test Driver Code
 
-To check your code manually, we recommend you write "driver code" inside of `index.js` instead of from inside your iterator files (e.g. `myEach.js`, `myMap.js`, `myReduce.js`). This helps keep your "driver code" seperate from your "implementation code".
+To check your code manually, we recommend you write "test driver code" inside of `index.js` instead of from inside your iterator files (e.g. `myEach.js`, `myMap.js`, `myReduce.js`). This helps keep your "test driver code" separate from your "implementation code".
 
-Here's an example of what good driver code looks like:
+Here's an example of what good test driver code looks like:
 
 ``` javascript
 //index.js
@@ -63,11 +62,11 @@ node index.js
 ```
 
 
-> **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing.
+> **Note**: Even though `myMap` lives in a different file, we still have access to it in `index.js`. That's what `require` is doing in each of the first few lines.
 
-## Checking Your Code: Using Tests
+### Checking Your Code Using Automated Tests
 
-For each problem (`problems.forEach`!), you can run the provided tests to check your work and confirm your solution.
+For each task (`tasks.forEach`!), you can run the provided tests to check your work and confirm your solution.
 
 #### Test Setup
 
@@ -81,13 +80,13 @@ npm install
 npm install -g mocha
 ```
 
-### Running the tests
+#### Running the tests
 
 To run the tests for `myMap` from the command-line, type:
 
 ```bash
 # make sure you are inside the building-js-iterators-lab directory
-mocha test/myMapSpec.js
+mocha spec/myMapSpec.js
 ```
 
 This will test the `myMap` function you wrote in `myMap.js`.
@@ -96,8 +95,8 @@ You can do the same thing for the other iterators as well:
 
 ```bash
 # make sure you are inside the building-js-iterators-lab directory
-mocha test/myEachSpec.js
-mocha test/myReduceSpec.js
+mocha spec/myEachSpec.js
+mocha spec/myReduceSpec.js
 ```
 
 > **Pro-Tip**: Let the tests call your function for you. You should not be calling, e.g. `myMap` in your code directly.
@@ -110,7 +109,7 @@ mocha test/myReduceSpec.js
 For example, here is some test output with three passing (✓) tests:
 
 ```
-$ mocha test/myMapSpec.js
+$ mocha spec/myMapSpec.js
 
 
  myMap
@@ -149,23 +148,24 @@ Here's an example of a failure messages (pay close attention to these, they give
   +1
   -0
 
-  at Context.testArrayL1 (test/myMapSpec.js:115:38)
+  at Context.testArrayL1 (spec/myMapSpec.js:126:38)
 ```
 
 An **assertion** is a statement that *asserts* or says this "MUST BE TRUE".  If
 the statement turns out to be false, then the assertion fails and the test fails.  
 
-In the above output we can see that the assertion in `test/myMapSpec.js:115:38` (at line 115, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
+In the above output we can see that the assertion in `spec/myMapSpec.js:126:38` (at line 126, and at character 38) expected `0` (the "actual" result) to equal `1` (the "expected" result).
+
+This is a little unclear, but at least it tells us exactly what part of the file to look at.
 
 **Example - Failure Message 2**
 
 ```
 2) myMap passes each item in the array to the callback:
    AssertionError: expected [] to have the same members as [ 'a', 'b', 'c', 'd' ]
-    at Context.testEachItem (test/myMapSpec.js:37:36)
+    at Context.testEachItem (spec/myMapSpec.js:37:36)
 ```
 
 *What do you think this means?*
 
-At line 37 in the test file there was an expectation that an array would have the elements `['a', 'b', 'c', 'd']`.  But instead it got an empty array!
-
+<details><summary>click for explanation</summary>At line 37 in the test file there was an expectation that an array would have the elements `['a', 'b', 'c', 'd']`.  But instead it got an empty array!</details>

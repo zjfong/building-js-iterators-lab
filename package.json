@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "tgaff",
+  "author": "GA (tgaff)",
   "license": "ISC",
   "dependencies": {
     "chai": "^3.4.1",
