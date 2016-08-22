@@ -6,9 +6,10 @@ function myMap(arr, callback) {
 
 }
 
+
 /*
  Best if you don't code out here.
- If you want to check your code, use `index.js`!
+ If you want to check your code, use tests or `index.js`!
 */
 
 
