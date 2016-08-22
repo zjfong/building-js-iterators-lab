@@ -83,7 +83,7 @@ You should be able to answer most of these questions based on the documentation 
   Example Inputs:
   ```js
   var words = ['apple', 'banana', 'cherry'];
-  var logAsList = function(element, index, arr){
+  function logAsList(element, index, arr){
     console.log(index + '. ' + element);
   }
   ```
@@ -115,7 +115,7 @@ You should be able to answer most of these questions based on the documentation 
   Example Inputs:
   ```js
   var numbers = [1, 4, 9];
-  var timesTwo = function(element, index, arr){
+  function timesTwo(element, index, arr){
     return element*2;
   }
   ```
@@ -145,7 +145,7 @@ You should be able to answer most of these questions based on the documentation 
   Example Inputs:
   ```js
   var numbers = [1, 4, 9, 16];
-  var isEven = function(element, index, arr){
+  function isEven(element, index, arr){
     return element % 2 === 0;
   }
   ```
@@ -165,7 +165,7 @@ You should be able to answer most of these questions based on the documentation 
 5. Create a function `myReduce` which implements `Array.prototype.reduce`. `myReduce` takes in an array and a callback function, and it can optionally take a starting value. It should iterate through all elements in the array and call the callback function with these parameters: the previous value (or starting value if no previous yet), the current element, the current index, and the array itself. `myReduce` should return a single value built up from the previous values. See [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce). Work in `starter-code/myReduce.js`.
 
   ```js
-  function myReduce(array, callback) {
+  function myReduce(array, callback, initialValue) {
     // your code here!
     // myReduce should duplicate the behavior of reduce
   }
@@ -175,18 +175,18 @@ You should be able to answer most of these questions based on the documentation 
   Example Inputs:
   ```js
   var numbers = [1, 4, 9];
-  var addUp = function(previous, element, index, arr){
+  function addUp(previous, element, index, arr){
     return previous + element;
   }
   ```
 
   Example Use:
   ```js
-  var result = myReduce(numbers, addUp);
-  // result is 14
+  var result = myReduce(numbers, addUp, 2);
+  // result is 16
 
   // note, this should be the same as saying:
-  result = numbers.reduce(addUp);
+  result = numbers.reduce(addUp, 2);
   ```
   </details>
 
