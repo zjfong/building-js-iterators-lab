@@ -3,6 +3,10 @@
 -->
 
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+Zachary Fong
+https://github.com/zjfong/building-js-iterators-lab
+Interesting intro to running tests for your work. Building the functions is a lot easier with the tests. It would be nice to walk through building a test. 
+
 
 # Building Iterator Methods
 Let's build our own iterator methods!
